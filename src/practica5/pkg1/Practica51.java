@@ -32,6 +32,11 @@ public class Practica51 {
         p.amortiza();
         p.amortiza();
         System.out.println( p );
+        
+        CuentaComisionReintregro ccr = new CuentaComisionReintregro(Cuenta.Tipo.AHORRO, 50, 0.05);
+        ccr.aplicaInteres();
+        System.out.println(ccr);
+    
     }
 }
     
