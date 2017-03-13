@@ -16,19 +16,15 @@ public class CuentaComisionReintregro extends Cuenta{
         
     }
     
-    public void aplicaInteres()
+    
+    @Override
+    public void reintegra(double v) throws Exception
     {
-         saldo -= getSaldo() * getInteres();
-    }
-    public String toString()
-    {
-        StringBuilder toret = new StringBuilder();
+        if ( v > getSaldo() ) {
+            throw new Exception( "saldo sobrepasado con: " + v );
+        }
 
-        toret.append( "Sacar dinero " );
-        toret.append( saldo );
-        toret.append( ": " );
-        toret.append( super.toString() );
-
-        return toret.toString();
+        saldo -= getSaldo() * getInteres();
     }
+    
 }
