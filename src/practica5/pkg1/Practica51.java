@@ -5,6 +5,9 @@
  */
 package practica5.pkg1;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author alumno
@@ -34,9 +37,17 @@ public class Practica51 {
         System.out.println( p );
         
         CuentaComisionReintregro ccr = new CuentaComisionReintregro(Cuenta.Tipo.AHORRO, 1000, 0.05);
-        ccr.aplicaInteres();
+        try {
+            ccr.reintegra(100);
+        } catch (Exception ex) {
+            System.err.println("ERROR" + ex.getMessage());
+        }
         System.out.println(ccr);
     
+        Empleado em = new Empleado("ines", 1000, c,Cuenta.Tipo.AHORRO,500,0.05);
+        System.out.println(em);
+        em.ingresaSalario();
+        System.out.println(em);
     }
 }
     
